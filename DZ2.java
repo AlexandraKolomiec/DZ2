@@ -3,21 +3,22 @@
 
 public class DZ2{
   public static void main(String[] args){
-    
     String[][] a = new String[5][5];
-    System.out.println(a);
-  }
-    int sum2d(String[][] a, int s) {
-      int s = 0;
-      for (int i = 0; i < a.length; i++) {
-        for (int j = 0; j < 5; j++) {
+    int s = 0;
+    for(int i=0; i< a.length; i++){
+      for(int j=0;j < 5; j++){
+        a[i][j]="0"+j;
+        System.out.print(a[i][j]+" ");
+        try{
           int val = Integer.parseInt(a[i][j]);
           s+=val;
         }
+        catch(NumberFormatException e){
+          System.out.println("Catching exception: " + e);
+        }
+                               
       }
-      return s;
-    
-    
+      System.out.println(s);
+    }
   }
-  
 }
